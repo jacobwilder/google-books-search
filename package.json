@@ -3,19 +3,23 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "hopepage": "http://jacobwilder.github.io/google-books-search",
   "scripts": {
     "start": "if-env NODE_ENV='production' && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon server.js --ignore 'client/*'\" \"npm run client\" ",
     "install": "cd client && npm install",
     "client": "cd client && npm run start",
-    "build": "cd client && npm run build"
+    "build": "cd client && npm run build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "gh-pages": "^2.1.1",
     "if-env": "^1.0.4",
     "mongoose": "^5.6.13"
   },
