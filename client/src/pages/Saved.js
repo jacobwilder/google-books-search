@@ -41,7 +41,7 @@ class Saved extends Component {
         <Container>
           <Row>
             {!this.state.bookList.length ? (
-              <h2 className="text-center">No saved books, yet...</h2>
+              <h2 className="text-center">No saved books</h2>
             ) : (
               this.state.bookList.map(book => {
                 return (
